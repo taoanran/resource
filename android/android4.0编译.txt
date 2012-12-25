@@ -1,0 +1,11 @@
+在112服务器中能够直接编译，没有问题。编译时间大概3小时,如果想使用emulator的话，请使用lunch 1 (1. full-eng)
+
+我自己在64位的ubuntu10.04中下载编译，出现过以下问题：
+
+1.
+  如果发现下载的时候timeout，可以把repo init -u https://android.googlesource.com/platform/manifest改为repo init -u https://android.googlesource.com/a/platform/manifest,并去https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=413937457453.apps.googleusercontent.com&scope=https://www.googleapis.com/auth/gerritcodereview&redirect_uri=https://www.googlesource.com/new-passwouird&state=android开放自己git权限
+
+ 
+2.编译的时候，如果出现java方面的奇怪问题，可以考虑是不是内存和swap空间太小的原因。可以扩大swap空间。mem+swap >= 12G才能编译通过android4.0源代码
+
+

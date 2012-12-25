@@ -1,0 +1,46 @@
+9
+
+dir
+28
+http://jeffy-vim.googlecode.com/svn/trunk/vim
+http://jeffy-vim.googlecode.com/svn
+
+
+
+2010-04-21T07:18:27.096709Z
+24
+jeffy.du
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+b8ead0c8-bffa-11de-91a4-794fdb80bb57
+
+colors
+dir
+
+macros
+dir
+
+syntax
+dir
+
+shell
+dir
+
+GetLatest
+dir
+
+plugin
+dir
+
