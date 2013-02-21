@@ -1,0 +1,30 @@
+                          FFMPEG学习指南
+一.编译
+    参考doc目录中的document和根目录的configure可知:
+     1.   source configure --enable-ffplay
+	其中—enable-ffplay是会编译生成ffplay,
+    
+    如果没有生成ffplay,请参考以下可能：
+    (1)1、安装SDL库（不安装将没有ffplay）（如果自己去下载SDL源码然后make install安装的库，编译ffmpeg可以产生ffplay，但是产生的ffplay播放视频没有声音。而且不能播音频）。以及其他的一些库。
+$sudo apt-get install build-essential subversion git-core checkinstall yasm texi2html libfaac-dev libfaad-dev libMP3lame-dev libsdl1.2-dev libtheora-dev libx11-dev libxvidcore4-dev zlib1g-dev
+sudo apt-get install libsdl1.2-dev(比较大，10M左右)
+
+      2. make    (这里将会主要生成ffmpeg,ffplay,ffserver三个文件)
+
+二.ffserver搭建简单的http?流服务器(mp3):
+    1. 更改doc/ffserver.conf 中的MP3部分:
+
+    # MP3 audio
+    <Stream test.mp3>
+    file "/home/taoanran/git/media/ffmpeg/test.mp3"     //?流的地址，名字必须与<Stream test.mp3>完全相同
+    Format mp2
+    #AudioCodec mp3
+    #AudioBitRate 64
+    #AudioChannels 1
+    #AudioSampleRate 44100
+    NoVideo
+   </Stream>
+
+
+    2.执行:ffserver -f doc/ffserver.conf  ，即可开启服务
+    3.执行: ffplay http://192.168.0.173:8090/test.mp3 可接受到?流 
