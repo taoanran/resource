@@ -11,3 +11,12 @@ FILE=./mk-ics.sh
         done
 } 
 #---------------------------------------------
+p=1
+q=11
+
+if [ $p -eq $q ]
+then
+    echo "p == adf"
+else
+    echo "NONO"
+fi
